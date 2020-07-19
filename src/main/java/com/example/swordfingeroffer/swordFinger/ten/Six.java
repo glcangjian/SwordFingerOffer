@@ -12,4 +12,21 @@ package com.example.swordfingeroffer.swordFinger.ten;
  * 题解：https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/solution/mian-shi-ti-11-xuan-zhuan-shu-zu-de-zui-xiao-shu-3/
  **/
 public class Six {
+
+    public int minArray(int[] numbers) {
+        if(numbers.length == 0)
+            return 0;
+        int i = 0,j = numbers.length-1;
+        while(i < j){
+            int mid = (i+j)/2;
+            if (numbers[mid] > numbers[j]){
+                i = mid + 1;
+            } else if (numbers[mid] < numbers[j]){
+                j = mid;
+            } else {
+                j--;
+            }
+        }
+        return numbers[i];
+    }
 }

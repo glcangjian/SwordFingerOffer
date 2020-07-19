@@ -10,4 +10,27 @@ package com.example.swordfingeroffer.swordFinger.twenty;
  **/
 public class Thirteen {
 
+    /**
+     * 用双指针求解,这里用快慢指针求解，慢指针指向将要存储奇数的索引位置
+     * 等待快指针去找奇数，找到后就跟满指针处的值交互
+     * @param nums
+     * @return
+     */
+    public int[] exchange(int[] nums) {
+        if (nums.length == 0)
+            return nums;
+        int slow = 0,fast = 0;
+        while (fast < nums.length){
+            if (nums[fast]%2 != 0){
+                int temp = nums[fast];
+                nums[fast] = nums[slow];
+                nums[slow] = temp;
+                slow++;
+            }
+            fast++;
+        }
+        return nums;
+    }
+
+
 }

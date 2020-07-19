@@ -9,4 +9,18 @@ package com.example.swordfingeroffer.swordFinger.ten;
  * 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy
  **/
 public class Two {
+    public static String replaceSpace(StringBuffer str) {
+        String str1=str.toString();
+        char[] charArray = str1.toCharArray();
+        StringBuilder sBuilder = new StringBuilder();
+        for (char c : charArray) {
+            if(c==' ') {
+                sBuilder.append("%20");
+            }else {
+                sBuilder.append(c);
+            }
+        }
+        String string = sBuilder.toString();
+        return string;
+    }
 }

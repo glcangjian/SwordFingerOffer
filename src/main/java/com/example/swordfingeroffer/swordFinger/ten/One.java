@@ -10,4 +10,31 @@ package com.example.swordfingeroffer.swordFinger.ten;
  * 判断数组中是否含有该整数
  **/
 public class One {
+    public boolean Find(int target, int [][] array) {
+        if (array == null || array.length == 0 || array[0].length == 0)
+            return false;
+        int i = array.length;
+        int j = array[0].length;
+        int row = 0, col = j - 1;
+        while (row < i && col >= 0){
+            if (target > array[row][col]){
+                row++;
+            } else if (target < array[row][col]){
+                col--;
+            } else {
+                return true;
+            }
+        }
+        return false;
+
+        /*
+        for (int i = 0; i < array.length; i++){
+            for (int j = 0; j < array[0].length; j++){
+                if (array[i][j] == target)
+                    return true;
+            }
+        }
+        return false;
+        */
+    }
 }
