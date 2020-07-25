@@ -29,7 +29,6 @@ public class QuickSort {
         if (right > mid + 1) {
             sort(arr, mid + 1, right);
         }
-
     }
 
     public int sort(int[] arr, int left, int right) {
@@ -50,6 +49,5 @@ public class QuickSort {
         }
         return left;
     }
-
 
 }
